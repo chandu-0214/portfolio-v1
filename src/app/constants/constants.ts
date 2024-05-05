@@ -23,7 +23,30 @@ import {
   SiNextdotjs,
   SiTypescript,
 } from "react-icons/si";
-import { bugtrackerImg } from "../assets";
+import { FaGitAlt } from "react-icons/fa";
+import { RiFirebaseFill } from "react-icons/ri";
+import { SiRedux } from "react-icons/si";
+import { SiExpress } from "react-icons/si";
+import {
+  bugtrackerImg,
+  chatbotImg,
+  VedioStreemingImg,
+  wikiAppImg,
+} from "../assets";
+import { Nextwatch } from "../assets";
+import { JobbyImg } from "../assets";
+import { NextTrendshome } from "../assets";
+import { FaCss3Alt } from "react-icons/fa";
+import { FaHtml5 } from "react-icons/fa";
+import { TbBrandPython } from "react-icons/tb";
+import { FaNodeJs } from "react-icons/fa";
+import { FaBootstrap } from "react-icons/fa";
+import { PiFileSql } from "react-icons/pi";
+import { SiVercel } from "react-icons/si";
+
+import { SiNetlify } from "react-icons/si";
+
+import { SiMui } from "react-icons/si";
 
 export const sideNavLinks: any = [
   {
@@ -232,20 +255,56 @@ export const projectsData = [
     src: bugtrackerImg,
     githubLink: "https://github.com/chandu-0214/issue-tracker-v1",
     webLink: "https://bug-tracker-ncr.vercel.app/",
+    isComplete: true,
+    isNew: true,
   },
   {
     title: "E-commerce Website",
     des: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!",
-    src: "",
+    src: NextTrendshome,
     githubLink: "",
-    webLink: "",
+    webLink: "https://nandikieshop.ccbp.tech/",
+    isComplete: true,
   },
   {
-    title: "Chatting App",
+    title: "Jobby App",
     des: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!",
-    src: "",
+    src: JobbyImg,
+    githubLink: "",
+    webLink: "https://nandikijobapp.ccbp.tech/",
+    isComplete: true,
+  },
+  {
+    title: "Youtube Clone",
+    des: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!",
+    src: Nextwatch,
+    githubLink: "",
+    webLink: "https://nandikiytclone.ccbp.tech/",
+    isComplete: true,
+  },
+  {
+    title: "Wikipedia App",
+    des: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!",
+    src: wikiAppImg,
+    githubLink: "",
+    webLink: "https://nandikiwikiapp.ccbp.tech/",
+    isComplete: true,
+  },
+  {
+    title: "Vedio/Audio Calling App",
+    des: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!",
+    src: VedioStreemingImg,
     githubLink: "",
     webLink: "",
+    isComplete: false,
+  },
+  {
+    title: "Chatbot.ai",
+    des: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!",
+    src: chatbotImg,
+    githubLink: "",
+    webLink: "",
+    isComplete: false,
   },
   // Add more project objects as needed
 ];
@@ -322,5 +381,42 @@ export const AchievementData = [
     subTitle: "Lorem ipsum dolor sit amet alternative.",
     result: "Success",
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora itaque accusamus corporis dolor debitis natus sapiente, voluptates possimus minima totam!",
+  },
+];
+
+export const skillsData = [
+  {
+    title: "Programming Languages",
+    skills: [
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Typescript", icon: SiTypescript },
+      { name: "Python", icon: TbBrandPython },
+      { name: "HTML 5", icon: FaHtml5 },
+      { name: "CSS3", icon: FaCss3Alt },
+      { name: "Sql", icon: PiFileSql },
+    ],
+  },
+  {
+    title: "Frameworks/Libraries",
+    skills: [
+      { name: "ReactJs", icon: FaReact },
+      { name: "NextJs", icon: SiNextdotjs },
+      { name: "Redux", icon: SiRedux },
+      { name: "NodeJs", icon: FaNodeJs },
+      { name: "Tailwindcss", icon: SiTailwindcss },
+      { name: "Bootstrap", icon: FaBootstrap },
+      { name: "ExpressJs", icon: SiExpress },
+      { name: "Mui", icon: SiMui },
+    ],
+  },
+  {
+    title: "Others",
+    skills: [
+      { name: "Git", icon: FaGitAlt },
+      { name: "Github", icon: FaGithub },
+      { name: "Firebase", icon: RiFirebaseFill },
+      { name: "Vercel", icon: SiVercel },
+      { name: "Netlify", icon: SiNetlify },
+    ],
   },
 ];

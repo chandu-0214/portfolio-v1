@@ -1,9 +1,28 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Title from "../layouts/Title";
 import ProjectsCard from "./ProjectsCard";
 import { projectsData } from "@/app/constants/constants";
+import Tab from "@/app/AddOnComponents/TabsComponent";
 
 const Projects = () => {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabClick = (index: any) => {
+    setActiveTab(index);
+  };
+
+  const tabsData = [
+    {
+      title: "Completed",
+      projects: projectsData.filter((item) => item.isComplete),
+    },
+    {
+      title: "Progress",
+      projects: projectsData.filter((item) => !item.isComplete),
+    },
+  ];
+
   return (
     <section
       id="projects"
@@ -15,8 +34,18 @@ const Projects = () => {
           des="My Projects"
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-14">
-        {projectsData.map((project, index) => (
+      <div className="flex justify-center mt-1">
+        {tabsData.map((tab, index) => (
+          <Tab
+            key={index}
+            title={tab.title}
+            onClick={() => handleTabClick(index)}
+            isActive={activeTab === index}
+          />
+        ))}
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-14 mt-1">
+        {tabsData[activeTab].projects.map((project, index) => (
           <ProjectsCard
             key={index}
             title={project.title}
@@ -24,6 +53,7 @@ const Projects = () => {
             src={project.src}
             githubLink={project.githubLink}
             webLink={project.webLink}
+            isNew={project?.isNew}
           />
         ))}
       </div>

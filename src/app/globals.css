@@ -37,6 +37,9 @@ body {
   .bannerIcon {
     @apply w-16 h-16 bg-black bg-opacity-25 text-gray-200 text-xl inline-flex items-center justify-center rounded-md shadow-shadowOne hover:bg-opacity-40 hover:-translate-y-1 transition-all hover:text-designColor cursor-pointer duration-300;
   }
+  .bannerIconSkill {
+    @apply w-24 h-24 bg-black bg-opacity-25 text-gray-200 text-xl inline-flex items-center justify-center rounded-md shadow-shadowOne hover:bg-opacity-40 hover:-translate-y-1 transition-all hover:text-designColor cursor-pointer duration-300;
+  }
   .bannerIconsocial {
     @apply w-10 h-10 bg-black bg-opacity-25 text-gray-200 text-xl inline-flex items-center justify-center rounded-md shadow-shadowOne hover:bg-opacity-40 hover:-translate-y-1 transition-all hover:text-designColor cursor-pointer duration-300;
   }
@@ -59,7 +62,4 @@ body {
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
-}
-.scrollbar-show::-webkit-scrollbar {
-  display: ;
 }
