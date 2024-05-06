@@ -13,10 +13,7 @@ import DownloadResume from "@/app/AddOnComponents/DownloadResume";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [loaded, setLoaded] = useState(false);
 
-  const photoUrl =
-    "https://res.cloudinary.com/dweagif0l/image/upload/v1714702874/1000177108-removebg_xdkrwx.png";
   return (
     <div className="w-full h-18 p-2  sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">
       <div className="w-12 h-12 flex items-center justify-center">

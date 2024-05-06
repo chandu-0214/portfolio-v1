@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { bannerImg } from "../../assets/index";
 import Image from "next/image";
 
 const RightBanner = () => {

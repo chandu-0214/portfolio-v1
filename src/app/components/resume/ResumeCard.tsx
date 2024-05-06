@@ -1,8 +1,42 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
+import { HiArrowRight } from "react-icons/hi";
 
 const ResumeCard = ({ title, subTitle, result, des }: any) => {
+  const modalRef = useRef<HTMLDialogElement>(null);
+
+  const openModal = () => {
+    if (modalRef.current) {
+      modalRef.current.showModal();
+    }
+  };
   return (
     <div className="w-full h-auto group flex">
+      <dialog id="my_modal_1" className="modal" ref={modalRef}>
+        <div className="modal-box bg-[#23272b]">
+          <div className="flex justify-start gap-3 items-center">
+            <h3 className="font-bold text-lg text-gray-300">{title}</h3>
+          </div>
+          <div className="flex justify-start gap-3 items-center">
+            <p className="text-sm mt-2 text-gray-300">
+              {subTitle + "," + result}
+            </p>
+          </div>
+          <div className="w-full h-[2px] mt-2 bg-designColor"></div>
+          <p className="py-4">{des}</p>
+          <div className="modal-action">
+            <form method="dialog">
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn" onClick={() => modalRef.current?.close()}>
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
       <div className="w-10 h-[6px] bgOpacity mt-16 relative">
         <span className="absolute w-5 h-5 rounded-full -top-2 -left-3 flex justify-center items-center bg-black bg-opacity-60">
           <span className="w-3 h-3 rounded-full bg-bodyColor inline-flex group-hover:bg-designColor duration-300"></span>
@@ -24,9 +58,12 @@ const ResumeCard = ({ title, subTitle, result, des }: any) => {
             </p>
           </div>
         </div>
-        <p className="text-sm md:text-base font-medium text-gray-400 group-hover:text-gray-300 duration-300">
+        <p className="text-sm md:text-base font-medium text-gray-400 group-hover:text-gray-300 duration-300 overflow-hidden line-clamp-3">
           {des}
         </p>
+        <span className="text-2xl text-designColor xs:mt-1 md:mt-0 cursor-pointer">
+          <HiArrowRight onClick={openModal} />
+        </span>
       </div>
     </div>
   );

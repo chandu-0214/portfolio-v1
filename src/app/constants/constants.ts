@@ -405,3 +405,30 @@ export const skillsData = [
     ],
   },
 ];
+
+export const FooterLinksData = [
+  {
+    title: "Quick Link",
+    links: ["About", "Portfolio", "Services", "Blog", "Contact"],
+  },
+  {
+    title: "RESOURCES",
+    links: [
+      "Authentication",
+      "System Status",
+      "Terms of Service",
+      "Pricing",
+      "Over Right",
+    ],
+  },
+  {
+    title: "DEVELOPERS",
+    links: [
+      "Documentation",
+      "Authentication",
+      "API Reference",
+      "Support",
+      "Open Source",
+    ],
+  },
+];

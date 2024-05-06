@@ -15,7 +15,7 @@ const CategoryCard = ({ resumeData, dataTitle, headingTitle }: any) => {
           <p className="text-sm text-designColor tracking-[4px]">{dataTitle}</p>
           <h2 className="text-3xl md:text-4xl font-bold">{headingTitle}</h2>
         </div>
-        <div className="mt-4 lgl:mt-7 w-full h-auto border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
+        <div className="mt-4 lgl:mt-7 xs:w-full md:w-9/12 h-auto border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
           {resumeData.map((item: any, index: any) => (
             <ResumeCard
               key={index}

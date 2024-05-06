@@ -8,10 +8,9 @@ import {
   EducationData,
   WorkExperienceData,
 } from "@/app/constants/constants";
-import DownloadResume from "@/app/AddOnComponents/DownloadResume";
 
 const initialState = {
-  selectedData: "educationData",
+  selectedData: "experienceData",
 };
 
 const reducer = (state: any, action: any) => {
@@ -37,9 +36,9 @@ const Resume = () => {
     dispatch({ type: "SET_DATA", payload: dataType });
   };
   return (
-    <section id="resume" className="w-full py-20 border-b-[1px] border-b-black">
+    <section id="resume" className="w-full py-10 border-b-[1px] border-b-black">
       <div className="flex justify-center items-center text-center">
-        <Title title="2.6+ YEARS OF EXPERIENCE" des="My Resume" />
+        <Title title="2.6+ YEARS OF EXPERIENCE" des="Experience" />
       </div>
       <div>
         <ul className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
