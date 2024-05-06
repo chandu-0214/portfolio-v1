@@ -18,7 +18,7 @@ const Projects = () => {
       projects: projectsData.filter((item) => item.isComplete),
     },
     {
-      title: "Progress",
+      title: "In Progress",
       projects: projectsData.filter((item) => !item.isComplete),
     },
   ];

@@ -4,10 +4,11 @@ import Slider from "react-slick";
 import { RiStarFill } from "react-icons/ri";
 import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
 import Title from "../layouts/Title";
-import { testimonialOne, testimonialTwo, quote } from "../../assets";
+// import { testimonialOne, testimonialTwo, quote } from "../../assets";
 import { PiQuotesBold } from "react-icons/pi";
 
 import Image from "next/image";
+import { quote, testimonialOne } from "@/app/AddOnComponents";
 
 function SampleNextArrow(props: any) {
   const { onClick } = props;

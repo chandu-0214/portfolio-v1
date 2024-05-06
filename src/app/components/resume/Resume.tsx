@@ -8,6 +8,7 @@ import {
   EducationData,
   WorkExperienceData,
 } from "@/app/constants/constants";
+import DownloadResume from "@/app/AddOnComponents/DownloadResume";
 
 const initialState = {
   selectedData: "educationData",

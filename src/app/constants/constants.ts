@@ -27,15 +27,6 @@ import { FaGitAlt } from "react-icons/fa";
 import { RiFirebaseFill } from "react-icons/ri";
 import { SiRedux } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
-import {
-  bugtrackerImg,
-  chatbotImg,
-  VedioStreemingImg,
-  wikiAppImg,
-} from "../assets";
-import { Nextwatch } from "../assets";
-import { JobbyImg } from "../assets";
-import { NextTrendshome } from "../assets";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa";
 import { TbBrandPython } from "react-icons/tb";
@@ -47,6 +38,15 @@ import { SiVercel } from "react-icons/si";
 import { SiNetlify } from "react-icons/si";
 
 import { SiMui } from "react-icons/si";
+import {
+  bugtrackerImg,
+  chatbotImg,
+  JobbyImg,
+  NextTrendshome,
+  Nextwatch,
+  VedioStreemingImg,
+  wikiAppImg,
+} from "../AddOnComponents";
 
 export const sideNavLinks: any = [
   {
@@ -187,36 +187,21 @@ export const cardFeaturedData = [
     des: "Proficient software engineer with experience in developing and implementing front-end architecture. Utilized React JS, Redux, and React Hook Forms for seamless implementation of features in GRC product.",
     icon: "FaCode",
   },
-  // {
-  //   title: "Business Strategy",
-  //   des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque soluta hic consequuntur eum repellendus ad.",
-  //   icon: "",
-  // },
-  // {
-  //   title: "App Development",
-  //   des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque soluta hic consequuntur eum repellendus ad.",
-  //   icon: "AiFillAppstore",
-  // },
-  // {
-  //   title: "SEO Optimisation",
-  //   des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque soluta hic consequuntur eum repellendus ad.",
-  //   icon: "SiProgress",
-  // },
-  // {
-  //   title: "Mobile Development",
-  //   des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque soluta hic consequuntur eum repellendus ad.",
-  //   icon: "FaMobile",
-  // },
-  // {
-  //   title: "UX Design",
-  //   des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque soluta hic consequuntur eum repellendus ad.",
-  //   icon: "SiAntdesign",
-  // },
-  // {
-  //   title: "Hosting Websites",
-  //   des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque soluta hic consequuntur eum repellendus ad.",
-  //   icon: "FaGlobe",
-  // },
+  {
+    title: "Teaching",
+    des: "Experienced in building and delivering robust web applications using HTML, CSS, JavaScript, Bootstrap, React JS, hooks, and MUI. Developed applications from scratch and enhanced ongoing projects.",
+    icon: "GiTeacher",
+  },
+  {
+    title: "Mentor",
+    des: "Experienced in building and delivering robust web applications using HTML, CSS, JavaScript, Bootstrap, React JS, hooks, and MUI. Developed applications from scratch and enhanced ongoing projects.",
+    icon: "GrUserManager",
+  },
+  {
+    title: "Sketching",
+    des: "Experienced in building and delivering robust web applications using HTML, CSS, JavaScript, Bootstrap, React JS, hooks, and MUI. Developed applications from scratch and enhanced ongoing projects.",
+    icon: "RiSketching",
+  },
 ];
 
 const cardData = [

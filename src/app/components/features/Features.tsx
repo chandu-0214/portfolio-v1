@@ -6,6 +6,9 @@ import { cardFeaturedData } from "@/app/constants/constants";
 import { FaMobile, FaGlobe, FaCode } from "react-icons/fa";
 import { AiFillAppstore, AiOutlineAntDesign } from "react-icons/ai";
 import { SiProgress, SiAntdesign } from "react-icons/si";
+import { GiTeacher } from "react-icons/gi";
+import { GrUserManager } from "react-icons/gr";
+import { RiSketching } from "react-icons/ri";
 
 const Features = () => {
   return (
@@ -43,6 +46,12 @@ const getIcon = (iconName: string) => {
       return <FaCode />;
     case "AiOutlineAntDesign":
       return <AiOutlineAntDesign />;
+    case "GiTeacher":
+      return <GiTeacher />;
+    case "GrUserManager":
+      return <GrUserManager />;
+    case "RiSketching":
+      return <RiSketching />;
     default:
       return null;
   }

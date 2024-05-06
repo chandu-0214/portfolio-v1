@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import { Link as LinkScroll } from "react-scroll";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
-import { logo } from "../../assets/index";
+import { FaMobile, FaGlobe, FaCode } from "react-icons/fa";
 import { navLinksdata } from "../../constants";
 import Image from "next/image";
 import { Personaldetails, socialLinks } from "@/app/constants/constants";
 import Link from "next/link";
 import CountdownComponent from "@/app/AddOnComponents/CountdownComponent";
+import DownloadResume from "@/app/AddOnComponents/DownloadResume";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -19,18 +19,18 @@ const Navbar = () => {
     "https://res.cloudinary.com/dweagif0l/image/upload/v1714702874/1000177108-removebg_xdkrwx.png";
   return (
     <div className="w-full h-18 p-2  sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">
-      <div className="w-12 h-12">
-        <Image
-          src={photoUrl}
-          height="500"
-          width="500"
-          alt="?"
-          onLoad={() => setLoaded(true)}
-          className={`transition-all duration-500 transform hover:scale-[3] hover:translate-y-10
-          hover:translate-x-10 rounded-full ${
-            loaded ? "blur-none" : "blur-sm"
-          } `}
-        />
+      <div className="w-12 h-12 flex items-center justify-center">
+        <LinkScroll
+          activeClass="active"
+          to={"home"}
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+          <FaCode className="text-4xl ml-7 mr-2 hover:text-designColor" />
+        </LinkScroll>
+        <p className=" text-designColor font-semibold">Chandu</p>
       </div>
       <div>
         <ul className="hidden mdl:inline-flex items-center gap-6 lg:gap-10">
@@ -51,6 +51,7 @@ const Navbar = () => {
               </LinkScroll>
             </li>
           ))}
+          <DownloadResume />
         </ul>
         <span
           onClick={() => setShowMenu(!showMenu)}
@@ -62,17 +63,20 @@ const Navbar = () => {
           <div className="w-[80%] h-auto overflow-scroll absolute top-0 left-0 bg-gray-900 p-4 scrollbar-show">
             <div className="flex flex-col gap-8 py-2 relative">
               <div>
-                <div className="w-12 h-12 rounded-full">
-                  <Image
-                    src={photoUrl}
-                    height="500"
-                    width="500"
-                    alt="?"
-                    onLoad={() => setLoaded(true)}
-                    className={`rounded-full ${
-                      loaded ? "blur-none" : "blur-sm"
-                    } `}
-                  />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                  <LinkScroll
+                    activeClass="active"
+                    to={"home"}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <FaCode className="text-2xl ml-4 mr-2 hover:text-designColor" />
+                  </LinkScroll>
+                  <p className=" text-designColor text-sm font-semibold">
+                    Chandu
+                  </p>
                 </div>
                 <p className="text-sm text-gray-400 mt-2">
                   {Personaldetails?.description1}
@@ -117,6 +121,7 @@ const Navbar = () => {
                   ))}
                 </div>
               </div>
+              <DownloadResume />
               <span
                 onClick={() => setShowMenu(false)}
                 className="absolute top-4 right-4 text-gray-400 hover:text-designColor duration-300 text-2xl cursor-pointer"

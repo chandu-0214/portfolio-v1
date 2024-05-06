@@ -15,7 +15,7 @@ export default function Home() {
           </span>{" "}
           I&rsquo;m Chandrashekhar{" "}
         </h1>
-        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-6 text-sm md:text-base font-bold bg-designColor px-3 py-3 xs:w-auto  xs:text-[10px]">
+        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-6 text-sm md:text-base font-bold md:bg-designColor xs:text-white px-3 py-3 xs:w-auto  xs:text-[10px]">
           <h2 className="tracking-[2px]   ">DEVELOPER</h2>
           <HiMinus className="text-lg rotate-90" />
           <h2 className="tracking-[2px] ">TEACHER</h2>
@@ -23,11 +23,10 @@ export default function Home() {
           <h2 className="tracking-[2px]  ">MENTOR</h2>
         </div>
         <Link href={"/portfolio"} className=" mt-2">
-          <button className="btn btn-outline btn-primary hover:scale-125 text-lg">
+          <button className="btn btn-outline  hover:scale-125 text-lg xs:btn-info">
             Explore Now ! <FaLocationArrow />
           </button>
         </Link>
-        {/* <MultiStepLoaderDemo /> */}
       </div>
     </main>
   );

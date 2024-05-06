@@ -2,8 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { BsGithub } from "react-icons/bs";
 import { FaGlobe } from "react-icons/fa";
-import { projectOne } from "../../assets/index";
 import Link from "next/link";
+import { projectOne } from "@/app/AddOnComponents";
 
 const ProjectsCard = ({
   title,
