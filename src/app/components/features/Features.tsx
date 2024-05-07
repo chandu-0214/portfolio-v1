@@ -26,12 +26,15 @@ const Features = () => {
             title={card.title}
             des={card.des}
             icon={getIcon(card.icon)}
+            modalDes={card.modalDes || ["hi"]}
+            modalttile={card.modalttile}
           />
         ))}
       </div>
     </section>
   );
 };
+
 const getIcon = (iconName: string) => {
   switch (iconName) {
     case "AiFillAppstore":

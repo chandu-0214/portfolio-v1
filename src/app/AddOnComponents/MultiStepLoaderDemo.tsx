@@ -1,8 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { MultiStepLoader as Loader } from "../components/ui/multi-step-loader";
-import { loadingImg } from "../assets";
-import Image from "next/image";
 
 const loadingStates = [
   {

@@ -1,8 +1,9 @@
 "use client";
+import Modaldes from "@/app/AddOnComponents/Modaldes";
 import React, { useRef } from "react";
 import { HiArrowRight } from "react-icons/hi";
 
-const Card = ({ title, des, icon }: any) => {
+const Card = ({ title, des, icon, modalttile, modalDes }: any) => {
   const modalRef = useRef<HTMLDialogElement>(null);
 
   const openModal = () => {
@@ -21,6 +22,7 @@ const Card = ({ title, des, icon }: any) => {
           </div>
           <div className="w-full h-[2px] mt-2 bg-designColor"></div>
           <p className="py-4">{des}</p>
+          <Modaldes modalDes={modalDes} modalttile={modalttile} />
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
@@ -38,7 +40,7 @@ const Card = ({ title, des, icon }: any) => {
         </form>
       </dialog>
       <div className="h-72 overflow-y-hidden">
-        <div className="flex h-full flex-col gap-10 translate-y-16 group-hover:translate-y-0 transition-transform duration-500">
+        <div className="flex h-full flex-col gap-10 translate-y-5 group-hover:translate-y-0 transition-transform duration-500">
           <div className="w-10 h-8 flex flex-col justify-between">
             {icon ? (
               <span className="text-4xl text-designColor">{icon}</span>

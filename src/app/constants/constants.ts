@@ -179,57 +179,62 @@ export const BestSkill = [
 export const cardFeaturedData = [
   {
     title: "Frontend Web Development",
-    des: "Experienced in building and delivering robust web applications using HTML, CSS, JavaScript, Bootstrap, React JS, hooks, and MUI. Developed applications from scratch and enhanced ongoing projects.",
+    des: "Experienced in building and delivering robust web applications using HTML, CSS, JavaScript, ReactJs, hooks, NextJs and TypeScript and MUI. Developed applications from scratch and enhanced ongoing projects.",
     icon: "AiOutlineAntDesign",
+    modalttile: "Key Strengths and Attributes",
+    modalDes: [
+      "Continuously integrating new technologies like Next.js and TypeScript to stay ahead in the rapidly evolving web development landscape.",
+      "Demonstrated ability to foster collaboration within teams, actively participating in problem-solving sessions, and providing valuable technical assistance to team members.",
+      " Prioritizes effective communication and teamwork to ensure seamless project execution and delivery of exceptional outcomes.",
+      "Strong problem-solving skills demonstrated through resolving technical issues and bugs reported by users, providing timely fixes and solutions.",
+    ],
   },
   {
     title: "Software Engineering",
-    des: "Proficient software engineer with experience in developing and implementing front-end architecture. Utilized React JS, Redux, and React Hook Forms for seamless implementation of features in GRC product.",
+    des: "Proficient software engineer with experience in developing and implementing front-end architecture. Continuously expanding skillset with courses in Next.js and TypeScript to embrace cutting-edge solutions.",
     icon: "FaCode",
+    modalttile: "Key Strengths and Attributes: Crafting Innovative",
+    modalDes: [
+      " Leveraged advanced tools like Next.js, React JS, Redux, and React Hook Forms to ensure the seamless implementation of features, contributing to the development of MetricStream's fastest and biggest GRC product.",
+      "Utilized agile methodologies to drive iterative development cycles, enabling rapid prototyping and continuous improvement. Actively participated in sprint planning, stand-ups, and retrospectives to foster collaboration and streamline project delivery.",
+      "Engaged in ongoing professional development, staying abreast of emerging technologies and best practices in software engineering. Committed to lifelong learning and self-improvement to remain at the forefront of the industry.",
+      "Experience in full-stack development, including integrating RESTful APIs for data retrieval, authentication, and other functionalities.",
+    ],
   },
   {
     title: "Teaching",
-    des: "Experienced in building and delivering robust web applications using HTML, CSS, JavaScript, Bootstrap, React JS, hooks, and MUI. Developed applications from scratch and enhanced ongoing projects.",
+    des: "Expert in teaching React JS, HTML, CSS, and other frontend technologies to enthusiastic learners at A2N Academy.",
     icon: "GiTeacher",
+    modalttile: "Passionate Educator",
+    modalDes: [
+      "Demonstrated ability to deliver engaging and comprehensive lessons, catering to diverse learning styles and skill levels.",
+      "Proven track record of empowering over hundreds of students with in-depth knowledge and practical skills in web development.",
+      "Known for clear and articulate explanations, fostering a supportive and interactive learning environment.",
+      "Committed to the success of every student, providing personalized guidance and mentorship to help them achieve their goals.",
+    ],
   },
   {
     title: "Mentor",
-    des: "Experienced in building and delivering robust web applications using HTML, CSS, JavaScript, Bootstrap, React JS, hooks, and MUI. Developed applications from scratch and enhanced ongoing projects.",
+    des: "Engaging in live interactions with Nxtwave students, offering mentorship and guidance on navigating the path to the IT sector.",
     icon: "GrUserManager",
+    modalttile: "Guiding Light",
+    modalDes: [
+      "Providing insights and advice on career pathways and strategies for securing high-paying job opportunities in the industry.",
+      "Addressing student queries and doubts with clarity and expertise, helping them understand the steps needed to excel in the IT field.",
+      "Sharing actionable tips and practical advice derived from personal experience and industry knowledge.",
+      "Empowering students with the knowledge and confidence to pursue their aspirations in the tech industry.",
+    ],
   },
   {
     title: "Sketching",
-    des: "Experienced in building and delivering robust web applications using HTML, CSS, JavaScript, Bootstrap, React JS, hooks, and MUI. Developed applications from scratch and enhanced ongoing projects.",
+    des: "Passionate sketch artist proficient in free sketching, portrait sketching, hatching, and more since childhood.",
     icon: "RiSketching",
-  },
-];
-
-const cardData = [
-  {
-    title: "Frontend Web Development",
-    des: "Experienced in building and delivering robust web applications using HTML, CSS, JavaScript, Bootstrap, React JS, hooks, and MUI. Developed applications from scratch and enhanced ongoing projects.",
-    icon: "AiOutlineAntDesign",
-  },
-  {
-    title: "Software Engineering",
-    des: "Proficient software engineer with experience in developing and implementing front-end architecture. Utilized React JS, Redux, and React Hook Forms for seamless implementation of features in GRC product.",
-    icon: "FaCode",
-  },
-  {
-    title: "Collaboration and Teamwork",
-    des: "Demonstrated ability to collaborate with teams, actively contributing to problem-solving sessions and providing technical assistance to team members.",
-  },
-  {
-    title: "Problem-solving Skills",
-    des: "Strong problem-solving skills demonstrated through resolving technical issues and bugs reported by users, providing timely fixes and solutions.",
-  },
-  {
-    title: "Full Stack Development",
-    des: "Experience in full-stack development, including integrating RESTful APIs for data retrieval, authentication, and other functionalities.",
-  },
-  {
-    title: "Internship Experience",
-    des: "Hands-on experience gained during internship, progressing from foundational understanding of web development to mastering React JS, Hooks, and Material-UI (MUI) for building diverse applications.",
+    modalttile: "Creative Expression",
+    modalDes: [
+      "Find solace, energy, and inspiration through the art of sketching, exploring new horizons and experiencing absolute happiness.",
+      "Utilize sketching as a means of creative expression, capturing moments, emotions, and perspectives with precision and finesse.",
+      "Continuously honing skills and pushing boundaries in sketching, embracing the joy and fulfillment it brings.",
+    ],
   },
 ];
 

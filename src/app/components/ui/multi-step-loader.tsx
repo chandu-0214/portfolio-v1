@@ -1,5 +1,4 @@
 "use client";
-import { loadingImg } from "@/app/assets";
 import { cn } from "@/app/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
