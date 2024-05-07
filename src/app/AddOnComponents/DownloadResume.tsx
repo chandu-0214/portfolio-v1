@@ -1,5 +1,5 @@
 import React from "react";
-import { IoCloudDownload } from "react-icons/io5";
+import { MdOutlineFileDownload } from "react-icons/md";
 
 const DownloadResume = () => {
   return (
@@ -12,7 +12,7 @@ const DownloadResume = () => {
           rel="noreferrer"
         >
           <button className=" flex justify-center items-center gap-2">
-            <IoCloudDownload className="w-8 h-8" /> Download CV
+            <MdOutlineFileDownload className="w-8 h-8" /> Resume
           </button>
         </a>
       </div>

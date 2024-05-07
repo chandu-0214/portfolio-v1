@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full h-18 p-2  sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">
-      <div className="w-12 h-12 flex items-center justify-center">
+      <div className="w-12 h-12 ml-3 flex items-center justify-center">
         <LinkScroll
           activeClass="active"
           to={"home"}

@@ -39,8 +39,11 @@ const Resume = () => {
     dispatch({ type: "SET_DATA", payload: dataType });
   };
   return (
-    <section id="resume" className="w-full py-10 border-b-[1px] border-b-black">
-      <div className="flex justify-center items-center text-center">
+    <section
+      id="resume"
+      className="w-full  py-10 border-b-[1px] border-b-black"
+    >
+      <div className="flex justify-center ml-4 items-center text-center">
         <Title
           title={`${yearsAndMonthsSinceStartJob}+ YEARS OF EXPERIENCE`}
           des="Experience"

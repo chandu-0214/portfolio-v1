@@ -5,6 +5,7 @@ import { FaGlobe } from "react-icons/fa";
 import Link from "next/link";
 import { projectOne } from "@/app/AddOnComponents";
 import { HiArrowRight } from "react-icons/hi";
+import Modaldes from "@/app/AddOnComponents/Modaldes";
 
 const ProjectsCard = ({
   title,
@@ -13,6 +14,9 @@ const ProjectsCard = ({
   webLink,
   githubLink,
   isNew = false,
+  modalttile,
+  modalDes,
+  links,
 }: any) => {
   const modalRef = useRef<HTMLDialogElement>(null);
 
@@ -55,6 +59,8 @@ const ProjectsCard = ({
           </div>
           <div className="w-full h-[2px] mt-2 bg-designColor"></div>
           <p className="py-4">{des}</p>
+          <Modaldes modalDes={modalDes} modalttile={modalttile} links={links} />
+
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}

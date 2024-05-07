@@ -9,6 +9,7 @@ import { PiQuotesBold } from "react-icons/pi";
 
 import Image from "next/image";
 import { quote, testimonialOne } from "@/app/AddOnComponents";
+import { testimonialsData } from "@/app/constants/constants";
 
 function SampleNextArrow(props: any) {
   const { onClick } = props;
@@ -99,127 +100,47 @@ const Testimonial = () => {
       <div className="flex justify-center items-center text-center">
         <Title title="WHAT CLIENTS SAY" des="Testimonial" />
       </div>
-      <div className="h-auto w-3/4 mx-auto">
+      <div className="h-auto md:w-3/4 xs:w-[90%] mx-auto">
         {/* ================ Slider One ================== */}
         <Slider {...settings}>
-          <div className="w-3/4 h-auto">
-            <div className="w-full h-auto flex flex-col lgl:flex-row justify-center">
-              <div className="w-auto h-auto flex flex-col justify-between">
-                <Image
-                  className="w-15 h-15"
-                  src={quote}
-                  width={50}
-                  height={50}
-                  alt="quote"
-                />
-                <div className="w-full h-auto py-10 bg-gradient-to-r from-[#1e2024] to-[#23272b] rounded-lg shadow-shadowOne p-4 lgl:p-8 flex flex-col justify-center gap-4 lgl:gap-8">
-                  <div className="flex  justify-between lgl:items-center py-6 border-b-2 border-b-gray-900">
-                    <Image
-                      className="w-20 h-20 rounded-full mr-5"
-                      src={testimonialOne}
-                      alt="testimonialOne"
-                    />
-                    <div className="w-full flex flex-col justify-end">
-                      <p className="text-xs uppercase text-designColor tracking-wide mb-2">
-                        Bound - Trolola
-                      </p>
-                      <h3 className="text-xl font-bold">Jone Duone Joe</h3>
-                      <p className="text-base tracking-wide text-gray-500">
-                        Operation Officer
-                      </p>
+          {testimonialsData.map((testimonial, index) => (
+            <div key={index} className="w-3/4 h-auto">
+              <div className="w-full h-auto flex flex-col lgl:flex-row justify-center">
+                <div className="w-auto h-auto flex flex-col justify-between">
+                  <Image
+                    className="w-15 h-15"
+                    src={quote}
+                    width={50}
+                    height={50}
+                    alt="quote"
+                  />
+                  <div className="w-full h-auto py-10 bg-gradient-to-r from-[#1e2024] to-[#23272b] rounded-lg shadow-shadowOne p-4 lgl:p-8 flex flex-col md:flex-row justify-center md: items-center gap-4 lgl:gap-8">
+                    <div className="flex justify-between md:flex-col md:gap-3 lgl:items-center md:w-2/3 py-6 border-b-2 border-b-gray-900">
+                      <Image
+                        className="w-20 h-20 rounded-full mr-5"
+                        src={testimonial.imgSrc}
+                        alt={`testimonial-${index + 1}`}
+                      />
+                      <div className="w-full flex gap-1 flex-col justify-end items-center">
+                        <h3 className="text-xl font-bold">
+                          {testimonial.name}
+                        </h3>
+                        <p className="text-sm tracking-wide text-gray-400">
+                          {testimonial.position}
+                        </p>
+                        <p className="text-xs font-semibold uppercase text-designColor tracking-wide mb-2">
+                          {testimonial.company}
+                        </p>
+                      </div>
                     </div>
+                    <p className="text-base md:mx-6 font-titleFont text-gray-400 font-medium tracking-wide leading-6">
+                      {testimonial.content}
+                    </p>
                   </div>
-                  <p className="text-base font-titleFont text-gray-400 font-medium tracking-wide leading-6">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-                    dolorum, eos natus ipsum numquam veniam officia
-                    necessitatibus ratione quos debitis exercitationem
-                    repudiandae facilis id neque nihil accusantium perspiciatis
-                    repellat? Iste.
-                  </p>
                 </div>
               </div>
             </div>
-          </div>
-          {/* ================ Slider Two ================== */}
-
-          <div className="w-3/4 h-auto">
-            <div className="w-full h-auto flex flex-col lgl:flex-row justify-center">
-              <div className="w-auto h-auto flex flex-col justify-between">
-                <Image
-                  className="w-15 h-15"
-                  src={quote}
-                  width={50}
-                  height={50}
-                  alt="quote"
-                />
-                <div className="w-full h-auto py-10 bg-gradient-to-r from-[#1e2024] to-[#23272b] rounded-lg shadow-shadowOne p-4 lgl:p-8 flex flex-col justify-center gap-4 lgl:gap-8">
-                  <div className="flex  justify-between lgl:items-center py-6 border-b-2 border-b-gray-900">
-                    <Image
-                      className="w-20 h-20 rounded-full mr-5"
-                      src={testimonialOne}
-                      alt="testimonialOne"
-                    />
-                    <div className="w-full flex flex-col justify-end">
-                      <p className="text-xs uppercase text-designColor tracking-wide mb-2">
-                        Bound - Trolola
-                      </p>
-                      <h3 className="text-xl font-bold">Jone Duone Joe</h3>
-                      <p className="text-base tracking-wide text-gray-500">
-                        Operation Officer
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-base font-titleFont text-gray-400 font-medium tracking-wide leading-6">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-                    dolorum, eos natus ipsum numquam veniam officia
-                    necessitatibus ratione quos debitis exercitationem
-                    repudiandae facilis id neque nihil accusantium perspiciatis
-                    repellat? Iste.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* ================ Slider Three ================== */}
-
-          <div className="w-3/4 h-auto">
-            <div className="w-full h-auto flex flex-col lgl:flex-row justify-center">
-              <div className="w-auto h-auto flex flex-col justify-between">
-                <Image
-                  className="w-15 h-15"
-                  src={quote}
-                  width={50}
-                  height={50}
-                  alt="quote"
-                />
-                <div className="w-full h-auto py-10 bg-gradient-to-r from-[#1e2024] to-[#23272b] rounded-lg shadow-shadowOne p-4 lgl:p-8 flex flex-col justify-center gap-4 lgl:gap-8">
-                  <div className="flex  justify-between lgl:items-center py-6 border-b-2 border-b-gray-900">
-                    <Image
-                      className="w-20 h-20 rounded-full mr-5"
-                      src={testimonialOne}
-                      alt="testimonialOne"
-                    />
-                    <div className="w-full flex flex-col justify-end">
-                      <p className="text-xs uppercase text-designColor tracking-wide mb-2">
-                        Bound - Trolola
-                      </p>
-                      <h3 className="text-xl font-bold">Jone Duone Joe</h3>
-                      <p className="text-base tracking-wide text-gray-500">
-                        Operation Officer
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-base font-titleFont text-gray-400 font-medium tracking-wide leading-6">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-                    dolorum, eos natus ipsum numquam veniam officia
-                    necessitatibus ratione quos debitis exercitationem
-                    repudiandae facilis id neque nihil accusantium perspiciatis
-                    repellat? Iste.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </Slider>
       </div>
     </section>

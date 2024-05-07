@@ -54,6 +54,9 @@ const Projects = () => {
             githubLink={project.githubLink}
             webLink={project.webLink}
             isNew={project?.isNew}
+            modalDes={project.modalDes}
+            modalttile={project.modalttile}
+            links={project.links || ""}
           />
         ))}
       </div>

@@ -1,8 +1,17 @@
 "use client";
+import Modaldes from "@/app/AddOnComponents/Modaldes";
 import React, { useRef } from "react";
 import { HiArrowRight } from "react-icons/hi";
 
-const ResumeCard = ({ title, subTitle, result, des }: any) => {
+const ResumeCard = ({
+  title,
+  subTitle,
+  result,
+  des,
+  modalDes,
+  modalttile,
+  links,
+}: any) => {
   const modalRef = useRef<HTMLDialogElement>(null);
 
   const openModal = () => {
@@ -22,6 +31,8 @@ const ResumeCard = ({ title, subTitle, result, des }: any) => {
           </div>
           <div className="w-full h-[2px] mt-2 bg-designColor"></div>
           <p className="py-4">{des}</p>
+          <Modaldes modalDes={modalDes} modalttile={modalttile} links={links} />
+
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}

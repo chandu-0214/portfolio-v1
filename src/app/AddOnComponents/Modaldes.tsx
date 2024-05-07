@@ -13,6 +13,16 @@ const Modaldes = (props: any) => {
           </li>
         ))}
       </ul>
+      {props.links && (
+        <a
+          href={props?.links}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold link text-designColor"
+        >
+          Visit
+        </a>
+      )}
     </>
   );
 };

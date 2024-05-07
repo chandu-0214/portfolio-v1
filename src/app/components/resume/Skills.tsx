@@ -21,7 +21,7 @@ const Skills = () => {
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
       className="w-full flex flex-col gap-10 lgl:gap-20"
     >
-      <div className="flex flex-col justify-center items-center text-center">
+      <div className="flex flex-col justify-center items-center text-center mt-2">
         <div className="flex  justify-center md:items-start flex-col lgl:flex-row gap-2 ">
           {skillsData.map((tab, index) => (
             <Tab
@@ -32,7 +32,7 @@ const Skills = () => {
             />
           ))}
         </div>
-        <div className="flex gap-4 flex-wrap">
+        <div className="flex gap-4 flex-wrap mt-3">
           {skillsData[activeTab].skills.map((category, index) => (
             <div key={index} className="flex gap-4">
               <motion.span key={index} className="bannerIconSkill relative ">
