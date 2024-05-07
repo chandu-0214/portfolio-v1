@@ -10,9 +10,11 @@ import { Personaldetails, socialLinks } from "@/app/constants/constants";
 import Link from "next/link";
 import CountdownComponent from "@/app/AddOnComponents/CountdownComponent";
 import DownloadResume from "@/app/AddOnComponents/DownloadResume";
+import { calculateYearsAndMonthsSinceStartJob } from "@/app/utils/workingYearCal";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const yearsAndMonthsSinceStartJob = calculateYearsAndMonthsSinceStartJob();
 
   return (
     <div className="w-full h-18 p-2  sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">
@@ -57,7 +59,7 @@ const Navbar = () => {
           <FiMenu />
         </span>
         {showMenu && (
-          <div className="w-[80%] h-auto overflow-scroll absolute top-0 left-0 bg-gray-900 p-4 scrollbar-show">
+          <div className="w-[80%] h-auto overflow-scroll absolute top-0 left-0 mt-2 bg-gray-900 p-4 scrollbar-show">
             <div className="flex flex-col gap-8 py-2 relative">
               <div>
                 <div className="w-12 h-12 rounded-full flex items-center justify-center">
@@ -71,13 +73,17 @@ const Navbar = () => {
                   >
                     <FaCode className="text-2xl ml-4 mr-2 hover:text-designColor" />
                   </LinkScroll>
-                  <p className=" text-designColor text-sm font-semibold">
+                  <p className=" text-designColor text-md font-semibold">
                     Chandu
                   </p>
                 </div>
                 <p className="text-sm text-gray-400 mt-2">
                   {Personaldetails?.description1}
-                  <CountdownComponent min={0} max={2.6} delay={40} />
+                  <CountdownComponent
+                    min={0}
+                    max={yearsAndMonthsSinceStartJob}
+                    delay={40}
+                  />
                   {Personaldetails?.description2}
                 </p>
               </div>

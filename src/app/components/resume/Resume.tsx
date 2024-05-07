@@ -8,6 +8,7 @@ import {
   EducationData,
   WorkExperienceData,
 } from "@/app/constants/constants";
+import { calculateYearsAndMonthsSinceStartJob } from "@/app/utils/workingYearCal";
 
 const initialState = {
   selectedData: "experienceData",
@@ -26,6 +27,8 @@ const reducer = (state: any, action: any) => {
 
 const Resume = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const yearsAndMonthsSinceStartJob = calculateYearsAndMonthsSinceStartJob();
+
   const listItems = [
     { key: "educationData", text: "Education" },
     { key: "skillData", text: "Professional Skills" },
@@ -38,7 +41,10 @@ const Resume = () => {
   return (
     <section id="resume" className="w-full py-10 border-b-[1px] border-b-black">
       <div className="flex justify-center items-center text-center">
-        <Title title="2.6+ YEARS OF EXPERIENCE" des="Experience" />
+        <Title
+          title={`${yearsAndMonthsSinceStartJob}+ YEARS OF EXPERIENCE`}
+          des="Experience"
+        />
       </div>
       <div>
         <ul className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">

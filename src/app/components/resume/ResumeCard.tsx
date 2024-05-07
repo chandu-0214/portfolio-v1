@@ -18,17 +18,18 @@ const ResumeCard = ({ title, subTitle, result, des }: any) => {
             <h3 className="font-bold text-lg text-gray-300">{title}</h3>
           </div>
           <div className="flex justify-start gap-3 items-center">
-            <p className="text-sm mt-2 text-gray-300">
-              {subTitle + "," + result}
-            </p>
+            <p className="text-sm mt-2 text-gray-300">{subTitle}</p>
           </div>
           <div className="w-full h-[2px] mt-2 bg-designColor"></div>
           <p className="py-4">{des}</p>
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
-              <button className="btn" onClick={() => modalRef.current?.close()}>
-                Close
+              <button
+                onClick={() => modalRef.current?.close()}
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 m-2 text-lg"
+              >
+                ✕
               </button>
             </form>
           </div>

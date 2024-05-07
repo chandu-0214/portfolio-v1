@@ -68,7 +68,7 @@ export const sideNavLinks: any = [
   {
     icon: FaLocationDot,
     label: "Location",
-    value: "Banglore",
+    value: "Banglore,India",
     bgColor: "",
     textColor: "",
     iconColor: "",

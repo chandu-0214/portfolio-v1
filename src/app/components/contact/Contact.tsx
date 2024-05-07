@@ -113,7 +113,7 @@ const Contact = () => {
               {`!`}
             </h3>
           </div>
-          <div className="w-full h-[2px] mt-2 bg-designColor"></div>
+          <div className="w-full h-[2px] my-2 bg-designColor"></div>
           <span className="py-1">
             {`Hey Chandrashekhar,`}
             <p className="py-1">{`I hope this email finds you well. I wanted to drop you a quick note to let you know that I stumbled upon your portfolio recently.`}</p>
@@ -133,7 +133,13 @@ const Contact = () => {
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
               <button
-                className="btn text-md font-semibold"
+                onClick={() => modalRef.current?.close()}
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-lg"
+              >
+                ✕
+              </button>
+              <button
+                className="btn bg-black text-white text-md font-semibold opacity-95"
                 onClick={() => {
                   modalRef.current?.close();
                   dispatch({

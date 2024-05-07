@@ -26,7 +26,7 @@ const ProjectsCard = ({
     <div className="w-full p-4 xl:px-12 h-auto xl:py-10 rounded-lg shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:gray-900 transition-colors duration-1000">
       <dialog id="my_modal_1" className="modal" ref={modalRef}>
         <div className="modal-box bg-[#23272b]">
-          <div className="flex justify-between mx-3 items-center">
+          <div className="flex justify-start gap-5 mx-3 items-center">
             <h3 className="font-bold text-lg text-gray-300">{title}</h3>
             <div className="flex gap-2">
               {githubLink && (
@@ -58,8 +58,11 @@ const ProjectsCard = ({
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
-              <button className="btn" onClick={() => modalRef.current?.close()}>
-                Close
+              <button
+                onClick={() => modalRef.current?.close()}
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 m-2 text-lg"
+              >
+                ✕
               </button>
             </form>
           </div>

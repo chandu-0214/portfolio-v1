@@ -16,8 +16,10 @@ const Features = () => {
       id="features"
       className="w-full py-10 border-b-[1px] border-b-black"
     >
-      <Title title="About Me" des="What I Do !" />
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-20">
+      <div className="flex justify-center items-center text-center">
+        <Title title="About Me" des="What I Do !" />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-10">
         {cardFeaturedData.map((card, index) => (
           <Card
             key={index}
