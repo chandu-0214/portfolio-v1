@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { BestSkill, skillsData } from "@/app/constants/constants";
+import { skillsData } from "@/app/constants/constants";
 import Tab from "@/app/AddOnComponents/TabsComponent";
 import { FaDesktop, FaCode } from "react-icons/fa";
 

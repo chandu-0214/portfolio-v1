@@ -26,6 +26,8 @@ const CategoryCard = ({ resumeData, dataTitle, headingTitle }: any) => {
               links={item.links || ""}
               modalttile={item.modalttile || ""}
               modalDes={item.modalDes || []}
+              modalDesAdd={item.modalDesAdd || false}
+              modalttileAdd={item.modalttileAdd || ""}
             />
           ))}
         </div>

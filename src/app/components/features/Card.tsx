@@ -16,7 +16,7 @@ const Card = ({ title, des, icon, modalttile, modalDes }: any) => {
     <div className="w-full px-12 h-80 py-10 rounded-lg shadow-shadowOne flex items-center bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-black hover:to-[#1e2024] transition-colors duration-100 group">
       <dialog id="my_modal_1" className="modal" ref={modalRef}>
         <div className="modal-box bg-[#23272b]">
-          <div className="flex justify-start gap-3 items-center">
+          <div className="flex justify-start gap-3 mt-3 items-center">
             {icon && <span className="text-3xl text-designColor">{icon}</span>}
             <h3 className="font-bold text-lg text-gray-300">{title}</h3>
           </div>
@@ -28,7 +28,7 @@ const Card = ({ title, des, icon, modalttile, modalDes }: any) => {
               {/* if there is a button in form, it will close the modal */}
               <button
                 onClick={() => modalRef.current?.close()}
-                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 m-2 text-lg"
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 text-designColor top-0 m-2 text-lg"
               >
                 ✕
               </button>

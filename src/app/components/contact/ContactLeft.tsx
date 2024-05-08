@@ -1,6 +1,5 @@
 import { sideNavLinks, socialLinks } from "@/app/constants/constants";
 import React from "react";
-import { FaHandsHelping } from "react-icons/fa";
 import { PiHandshakeFill } from "react-icons/pi";
 
 const ContactLeft = () => {

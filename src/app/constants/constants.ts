@@ -1,5 +1,4 @@
 import {
-  MdContactPhone,
   MdOutlineMailOutline,
   MdWork,
   MdConnectWithoutContact,
@@ -441,22 +440,32 @@ export const WorkExperienceData = [
 
 export const AchievementData = [
   {
-    title: "Lorem ipsum dolor sit amet.",
-    subTitle: "Lorem ipsum dolor sit amet alternative.",
+    title: "Substantial hike and appraisal ",
+    subTitle: "MetricStream,Bengaluru",
     result: "Success",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora itaque accusamus corporis dolor debitis natus sapiente, voluptates possimus minima totam!",
+    modalttile: "Driving Client Success at MetricStream",
+    modalttileAdd: "Impact",
+    modalDes: [
+      "Strategic Layout Development: Spearheaded the development of innovative layout functionalities, enhancing the user experience and streamlining processes for clients.",
+      "Advanced Reporting Solutions: Engineered comprehensive group-by reports, providing clients with insightful data analysis and actionable insights to drive informed decision-making.",
+    ],
+    modalDesAdd: [
+      "Financial Recognition: Secured a noteworthy hike and appraisal, reflecting the tangible value added to MetricStream's operations through my contributions.",
+      "Client Satisfaction: Delivered tailored solutions that met and exceeded the expectations of high-profile clients, fostering long-term partnerships and solidifying MetricStream's reputation as a trusted industry leader.",
+    ],
+    des: "As a pivotal member of the team, I played a prime role in architecting layout functionalities and crafting group-by reports for esteemed clients such as Barclays and Guidewire, among others.",
   },
   {
-    title: "Lorem ipsum dolor sit amet.",
-    subTitle: "Lorem ipsum dolor sit amet alternative.",
-    result: "Success",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora itaque accusamus corporis dolor debitis natus sapiente, voluptates possimus minima totam!",
-  },
-  {
-    title: "Lorem ipsum dolor sit amet.",
-    subTitle: "Lorem ipsum dolor sit amet alternative.",
-    result: "Success",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora itaque accusamus corporis dolor debitis natus sapiente, voluptates possimus minima totam!",
+    title: "GATE Qualification (2018 & 2020)",
+    subTitle: "Ace Academy, Hyderabad",
+    result: "Qualified",
+    modalttile: "A Journey of Dedication and Growth",
+    modalDes: [
+      "During my preparation for GATE, I embraced a rigorous regimen that sharpened my problem-solving skills and fostered conceptual thinking.",
+      "The process of mastering diverse topics underscored my aptitude for acquiring new skills and knowledge swiftly a trait that continues to serve me well in my professional journey.",
+      " As a front-end developer, I thrive in crafting intricate solutions and bringing creative visions to life, empowered by the analytical prowess and problem-solving acumen honed through my GATE journey.",
+    ],
+    des: "Through my GATE achievements, I not only demonstrated academic excellence but also showcased my ability to thrive in high-pressure environments, innovate, and overcome challenges a testament to my unwavering commitment to personal and professional growth.",
   },
 ];
 

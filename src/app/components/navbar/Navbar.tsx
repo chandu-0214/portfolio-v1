@@ -3,9 +3,8 @@ import React, { useState } from "react";
 import { Link as LinkScroll } from "react-scroll";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
-import { FaMobile, FaGlobe, FaCode } from "react-icons/fa";
+import { FaCode } from "react-icons/fa";
 import { navLinksdata } from "../../constants";
-import Image from "next/image";
 import { Personaldetails, socialLinks } from "@/app/constants/constants";
 import Link from "next/link";
 import CountdownComponent from "@/app/AddOnComponents/CountdownComponent";
@@ -18,7 +17,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full h-18 p-2  sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">
-      <div className="w-12 h-12 ml-3 flex items-center justify-center">
+      <div className="w-12 h-12 ml-3 flex items-center justify-center cursor-pointer">
         <LinkScroll
           activeClass="active"
           to={"home"}
@@ -59,10 +58,10 @@ const Navbar = () => {
           <FiMenu />
         </span>
         {showMenu && (
-          <div className="w-[80%] h-auto overflow-scroll absolute top-0 left-0 mt-2 bg-gray-900 p-4 scrollbar-show">
+          <div className="w-[80%] h-auto max-h-[95vh] overflow-scroll absolute top-0 left-0 mt-2 bg-gray-900 p-4 scrollbar-show">
             <div className="flex flex-col gap-8 py-2 relative">
               <div>
-                <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer">
                   <LinkScroll
                     activeClass="active"
                     to={"home"}

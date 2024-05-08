@@ -2,7 +2,6 @@ import Design from "./components/bgDesigner/Design";
 import { HiMinus } from "react-icons/hi";
 import { FaLocationArrow } from "react-icons/fa";
 import Link from "next/link";
-import { MultiStepLoaderDemo } from "./AddOnComponents/MultiStepLoaderDemo";
 
 export default function Home() {
   return (

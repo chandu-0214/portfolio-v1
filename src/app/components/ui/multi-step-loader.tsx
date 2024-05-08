@@ -131,7 +131,7 @@ export const MultiStepLoader = ({
           exit={{
             opacity: 0,
           }}
-          className={`w-full h-full fixed inset-0 z-[100] flex flex-col items-center justify-center backdrop-blur-xl bg-[#212428]`}
+          className={`w-full h-full fixed inset-0 z-[100] flex flex-col items-center justify-center backdrop-blur-xl bg-[#53575e]`}
         >
           <span className="loading loading-spinner loading-lg text-lime-500 opacity-40"></span>
 

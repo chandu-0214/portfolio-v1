@@ -1,14 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import Slider from "react-slick";
-import { RiStarFill } from "react-icons/ri";
 import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
 import Title from "../layouts/Title";
-// import { testimonialOne, testimonialTwo, quote } from "../../assets";
-import { PiQuotesBold } from "react-icons/pi";
-
 import Image from "next/image";
-import { quote, testimonialOne } from "@/app/AddOnComponents";
+import { quote } from "@/app/AddOnComponents";
 import { testimonialsData } from "@/app/constants/constants";
 
 function SampleNextArrow(props: any) {

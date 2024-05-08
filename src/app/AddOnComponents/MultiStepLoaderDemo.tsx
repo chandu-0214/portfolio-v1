@@ -4,19 +4,22 @@ import { MultiStepLoader as Loader } from "../components/ui/multi-step-loader";
 
 const loadingStates = [
   {
-    text: "🚀 Preparing to load...",
+    text: "🚀 Preparing Files...",
   },
   {
-    text: "📷 Images loaded...",
+    text: "📦 Bundling Data...",
+  },
+  {
+    text: "📷 Images Loaded...",
   },
   {
     text: "🌐 Navbar Added...",
   },
   {
-    text: "📈 Projects loaded...",
+    text: "📈 Projects Loaded...",
   },
   {
-    text: "📋Resume loaded...",
+    text: "📋Resume Loaded...",
   },
   {
     text: "🎨Layouts Added...",

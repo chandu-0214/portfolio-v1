@@ -8,7 +8,6 @@ import {
 } from "@/app/constants/constants";
 import Link from "next/link";
 import CountdownComponent from "@/app/AddOnComponents/CountdownComponent";
-import ToolTip from "@/app/AddOnComponents/ToolTip";
 import { calculateYearsAndMonthsSinceStartJob } from "@/app/utils/workingYearCal";
 
 const LeftBanner = () => {

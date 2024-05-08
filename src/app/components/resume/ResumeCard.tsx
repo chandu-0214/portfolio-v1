@@ -11,6 +11,8 @@ const ResumeCard = ({
   modalDes,
   modalttile,
   links,
+  modalDesAdd,
+  modalttileAdd,
 }: any) => {
   const modalRef = useRef<HTMLDialogElement>(null);
 
@@ -23,7 +25,7 @@ const ResumeCard = ({
     <div className="w-full h-auto group flex">
       <dialog id="my_modal_1" className="modal" ref={modalRef}>
         <div className="modal-box bg-[#23272b]">
-          <div className="flex justify-start gap-3 items-center">
+          <div className="flex justify-start gap-3 mt-3 items-center">
             <h3 className="font-bold text-lg text-gray-300">{title}</h3>
           </div>
           <div className="flex justify-start gap-3 items-center">
@@ -31,14 +33,20 @@ const ResumeCard = ({
           </div>
           <div className="w-full h-[2px] mt-2 bg-designColor"></div>
           <p className="py-4">{des}</p>
-          <Modaldes modalDes={modalDes} modalttile={modalttile} links={links} />
+          <Modaldes
+            modalDes={modalDes}
+            modalttile={modalttile}
+            links={links}
+            modalDesAdd={modalDesAdd}
+            modalttileAdd={modalttileAdd}
+          />
 
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
               <button
                 onClick={() => modalRef.current?.close()}
-                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 m-2 text-lg"
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 text-designColor top-0 m-2 text-lg"
               >
                 ✕
               </button>

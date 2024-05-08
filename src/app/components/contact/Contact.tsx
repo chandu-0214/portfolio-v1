@@ -5,6 +5,7 @@ import ContactLeft from "./ContactLeft";
 import { GrSend } from "react-icons/gr";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { SiGoogleforms } from "react-icons/si";
+import emailjs from "@emailjs/browser";
 
 const initialState = {
   username: "",
@@ -34,7 +35,9 @@ const reducer = (state: any, action: any) => {
 const Contact = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [isEmailAlreadySent, setisEmailAlreadySent] = useState<any>(false);
+  const [isLoading, setisLoading] = useState(false);
   const modalRef = useRef<HTMLDialogElement>(null);
+  const form = useRef<any>("Test");
 
   const openModal = () => {
     if (modalRef.current) {
@@ -63,10 +66,8 @@ const Contact = () => {
       .match(/^[\w.]+([-]*[\w.]+)*@\w+([-]*\w+)*(\.\w{2,3}([-]*\w+)*)+$/);
   };
   const phoneNumberValidation = (phoneNumber: any) => {
-    // Regular expression for phone number validation
     const phoneRegex = /^[0-9]{10}$/;
 
-    // Check if the phone number matches the regular expression
     return phoneRegex.test(phoneNumber);
   };
 
@@ -91,9 +92,67 @@ const Contact = () => {
         message: "Please enter a valid Phone Number.",
       });
     } else {
-      // Assuming email sending logic here
       openModal();
     }
+  };
+  const HandleSendEmail = () => {
+    console.log("SendEmail");
+    setisLoading(true);
+    const sentdata: any = {
+      to_name: "Chandrashekhar",
+      from_name: state.username,
+      message: `Subject: ${state?.subject}
+      Message: ${state.message}.
+      Contact Info: ${state.email},${state.phoneNumber}`,
+      reply_to: `${state.email}`,
+    };
+
+    const formElement = document.createElement("form");
+
+    Object.keys(sentdata).forEach((key) => {
+      const input = document.createElement("input");
+      input.setAttribute("type", "hidden");
+      input.setAttribute("name", key);
+      input.setAttribute("value", sentdata[key]);
+      formElement.appendChild(input);
+    });
+    document.body.appendChild(formElement);
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICEID!,
+        process.env.NEXT_PUBLIC_TEMPLATEID!,
+        formElement,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJSAPIKEY!,
+        }
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          dispatch({
+            type: "SET_SUCCESS",
+            message: `Thank you dear ${username}, Your Messages has been sent Successfully!`,
+          });
+          dispatch({ type: "RESET_FORM" });
+          setisEmailAlreadySent(true);
+          setisLoading(false);
+          modalRef.current?.close();
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          dispatch({
+            type: "SET_ERROR",
+            message: error.text,
+          });
+          dispatch({ type: "RESET_FORM" });
+          setisLoading(false);
+
+          modalRef.current?.close();
+        }
+      );
+
+    // Remove the form element from the document body after sending
+    document.body.removeChild(formElement);
   };
 
   return (
@@ -140,15 +199,7 @@ const Contact = () => {
               </button>
               <button
                 className="btn bg-black text-white text-md font-semibold opacity-95"
-                onClick={() => {
-                  modalRef.current?.close();
-                  dispatch({
-                    type: "SET_SUCCESS",
-                    message: `Thank you dear ${username}, Your Messages has been sent Successfully!`,
-                  });
-                  dispatch({ type: "RESET_FORM" });
-                  setisEmailAlreadySent(true);
-                }}
+                onClick={HandleSendEmail}
               >
                 Send
               </button>
@@ -162,138 +213,148 @@ const Contact = () => {
       <div className="w-full">
         <div className="w-full h-auto flex flex-col lgl:flex-row justify-between">
           <ContactLeft />
-          <div className="w-full lgl:w-[60%] h-full py-10 bg-gradient-to-r from-[#1e2024] to-[#23272b] flex flex-col gap-8 p-4 lgl:p-8 rounded-lg shadow-shadowOne">
-            {!(
-              isEmailAlreadySent && isEmailAlreadySent === "EmailAlreadySent"
-            ) ? (
-              <form className="w-full flex flex-col gap-4 lgl:gap-6 py-2 lgl:py-5">
-                <div className="text-base flex justify-start gap-2 items-center tracking-wide">
-                  <SiGoogleforms className="w-8 h-8 text-designColor align-self-center " />
-                  <h2 className="text-2xl font-bold text-white">
-                    Contact Form
-                  </h2>
-                </div>
-                {(errMsg || successMsg) && (
-                  <p
-                    className={`py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center ${
-                      errMsg ? "text-orange-500" : "text-green-500"
-                    } text-base tracking-wide animate-bounce`}
-                  >
-                    {errMsg || successMsg}
-                  </p>
-                )}
-                <div className="w-full flex flex-col lgl:flex-row gap-10">
-                  <div className="w-full lgl:w-1/2 flex flex-col gap-4">
+          {isLoading ? (
+            <span
+              style={{ position: "absolute" }}
+              className="loading loading-spinner loading-xl right-1/2 left-1/2  text-designColor"
+            ></span>
+          ) : (
+            <div className="w-full lgl:w-[60%] h-full py-10 bg-gradient-to-r from-[#1e2024] to-[#23272b] flex flex-col gap-8 p-4 lgl:p-8 rounded-lg shadow-shadowOne">
+              {!(
+                isEmailAlreadySent && isEmailAlreadySent === "EmailAlreadySent"
+              ) ? (
+                <form
+                  ref={form}
+                  className="w-full flex flex-col gap-4 lgl:gap-6 py-2 lgl:py-5"
+                >
+                  <div className="text-base flex justify-start gap-2 items-center tracking-wide">
+                    <SiGoogleforms className="w-8 h-8 text-designColor align-self-center " />
+                    <h2 className="text-2xl font-bold text-white">
+                      Contact Form
+                    </h2>
+                  </div>
+                  {(errMsg || successMsg) && (
+                    <p
+                      className={`py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center ${
+                        errMsg ? "text-orange-500" : "text-green-500"
+                      } text-base tracking-wide animate-bounce`}
+                    >
+                      {errMsg || successMsg}
+                    </p>
+                  )}
+                  <div className="w-full flex flex-col lgl:flex-row gap-10">
+                    <div className="w-full lgl:w-1/2 flex flex-col gap-4">
+                      <p className="text-sm text-gray-400 uppercase tracking-wide">
+                        Your name
+                      </p>
+                      <input
+                        onChange={handleInputChange}
+                        value={username}
+                        name="username"
+                        className={`contactInput ${
+                          errMsg && "outline-designColor"
+                        }`}
+                        type="text"
+                        placeholder="Enter your name"
+                      />
+                    </div>
+                    <div className="w-full lgl:w-1/2 flex flex-col gap-4">
+                      <p className="text-sm text-gray-400 uppercase tracking-wide">
+                        Phone Number
+                      </p>
+                      <input
+                        onChange={handleInputChange}
+                        value={phoneNumber}
+                        name="phoneNumber"
+                        className={`contactInput ${
+                          errMsg && "outline-designColor"
+                        }`}
+                        type="text"
+                        placeholder="Enter your phone number"
+                      />
+                    </div>
+                  </div>
+                  <div className="w-full flex flex-col gap-4">
                     <p className="text-sm text-gray-400 uppercase tracking-wide">
-                      Your name
+                      Email
                     </p>
                     <input
                       onChange={handleInputChange}
-                      value={username}
-                      name="username"
+                      value={email}
+                      name="email"
+                      className={`contactInput ${
+                        errMsg && "outline-designColor"
+                      }`}
+                      type="email"
+                      placeholder="Enter your valid email"
+                    />
+                  </div>
+                  <div className="w-full flex flex-col gap-4">
+                    <p className="text-sm text-gray-400 uppercase tracking-wide">
+                      Subject
+                    </p>
+                    <input
+                      onChange={handleInputChange}
+                      value={subject}
+                      name="subject"
                       className={`contactInput ${
                         errMsg && "outline-designColor"
                       }`}
                       type="text"
-                      placeholder="Enter your name"
+                      placeholder="Enter the subject"
                     />
                   </div>
-                  <div className="w-full lgl:w-1/2 flex flex-col gap-4">
+                  <div className="w-full flex flex-col gap-4">
                     <p className="text-sm text-gray-400 uppercase tracking-wide">
-                      Phone Number
+                      Message
                     </p>
-                    <input
+                    <textarea
                       onChange={handleInputChange}
-                      value={phoneNumber}
-                      name="phoneNumber"
-                      className={`contactInput ${
+                      value={message}
+                      name="message"
+                      className={`contactTextArea ${
                         errMsg && "outline-designColor"
                       }`}
-                      type="text"
-                      placeholder="Enter your phone number"
-                    />
+                      cols={30}
+                      rows={8}
+                      placeholder="Type your message here"
+                    ></textarea>
                   </div>
-                </div>
-                <div className="w-full flex flex-col gap-4">
-                  <p className="text-sm text-gray-400 uppercase tracking-wide">
-                    Email
-                  </p>
-                  <input
-                    onChange={handleInputChange}
-                    value={email}
-                    name="email"
-                    className={`contactInput ${
-                      errMsg && "outline-designColor"
-                    }`}
-                    type="email"
-                    placeholder="Enter your valid email"
-                  />
-                </div>
-                <div className="w-full flex flex-col gap-4">
-                  <p className="text-sm text-gray-400 uppercase tracking-wide">
-                    Subject
-                  </p>
-                  <input
-                    onChange={handleInputChange}
-                    value={subject}
-                    name="subject"
-                    className={`contactInput ${
-                      errMsg && "outline-designColor"
-                    }`}
-                    type="text"
-                    placeholder="Enter the subject"
-                  />
-                </div>
-                <div className="w-full flex flex-col gap-4">
-                  <p className="text-sm text-gray-400 uppercase tracking-wide">
-                    Message
-                  </p>
-                  <textarea
-                    onChange={handleInputChange}
-                    value={message}
-                    name="message"
-                    className={`contactTextArea ${
-                      errMsg && "outline-designColor"
-                    }`}
-                    cols={30}
-                    rows={8}
-                    placeholder="Type your message here"
-                  ></textarea>
-                </div>
-                <div className="w-full">
+                  <div className="w-full">
+                    <button
+                      onClick={handleSend}
+                      className="w-full h-12 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-designColor border-transparent"
+                    >
+                      <div className="flex justify-center items-center">
+                        <GrSend className="w-8 h-8 mx-2 text-designColor" />
+                        Send Message
+                      </div>
+                    </button>
+                  </div>
+                </form>
+              ) : (
+                <div className="my-10 xs:text-md md:text-xl flex flex-col justify-center items-center ">
+                  <div className="flex justify-center items-center text-green-400 gap-2">
+                    <IoCheckmarkDoneCircle className="w-12 h-12" />
+                    <span>
+                      You have already sent an e-mail recently. Thank You !
+                    </span>
+                  </div>
                   <button
-                    onClick={handleSend}
-                    className="w-full h-12 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-designColor border-transparent"
+                    onClick={() => {
+                      setisEmailAlreadySent("Send_again");
+                    }}
+                    className="w-1/2 h-12 mt-5 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-designColor border-transparent"
                   >
                     <div className="flex justify-center items-center">
                       <GrSend className="w-8 h-8 mx-2 text-designColor" />
-                      Send Message
+                      Send Again
                     </div>
                   </button>
                 </div>
-              </form>
-            ) : (
-              <div className="my-10 xs:text-md md:text-xl flex flex-col justify-center items-center ">
-                <div className="flex justify-center items-center text-green-400 gap-2">
-                  <IoCheckmarkDoneCircle className="w-12 h-12" />
-                  <span>
-                    You have already sent an e-mail recently. Thank You !
-                  </span>
-                </div>
-                <button
-                  onClick={() => {
-                    setisEmailAlreadySent("Send_again");
-                  }}
-                  className="w-1/2 h-12 mt-5 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-designColor border-transparent"
-                >
-                  <div className="flex justify-center items-center">
-                    <GrSend className="w-8 h-8 mx-2 text-designColor" />
-                    Send Again
-                  </div>
-                </button>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </section>
