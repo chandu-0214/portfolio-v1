@@ -3,6 +3,8 @@ import dynamic from "next/dynamic";
 import "slick-carousel/slick/slick.css";
 import Navbar from "../components/navbar/Navbar";
 import Banner from "../components/banner/Banner";
+import { Metadata } from "next";
+import { calculateYearsAndMonthsSinceStartJob } from "../utils/workingYearCal";
 
 const Features = dynamic(() => import("../components/features/Features"));
 const Projects = dynamic(() => import("../components/projects/Projects"));
@@ -30,6 +32,11 @@ const PortfolioPage = () => {
       <ScrollBtn />
     </div>
   );
+};
+
+export const metadata: Metadata = {
+  title: "Welcome to my World",
+  description: `Chandu brings over ${calculateYearsAndMonthsSinceStartJob}+ years of hands-on experience in crafting robust web applications, coupling technical prowess with an insatiable hunger for growth.`,
 };
 
 export default PortfolioPage;
