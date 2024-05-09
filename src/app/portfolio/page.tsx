@@ -35,7 +35,7 @@ const PortfolioPage = () => {
 };
 
 export const metadata: Metadata = {
-  title: "Welcome to my World",
+  title: "Welcome to my world",
   description: `Chandu brings over ${calculateYearsAndMonthsSinceStartJob}+ years of hands-on experience in crafting robust web applications, coupling technical prowess with an insatiable hunger for growth.`,
 };
 

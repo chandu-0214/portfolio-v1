@@ -1,6 +1,6 @@
 export function calculateYearsAndMonthsSinceStartJob() {
   // Start date
-  const startDate = new Date("2021-09-01");
+  const startDate = new Date("2021-11-01");
 
   // Current date
   const currentDate = new Date();

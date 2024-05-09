@@ -271,7 +271,7 @@ export const projectsData = [
     modalttile: "Key Features",
     modalDes: [
       "React Framework: Utilizing React for the frontend development ensures a fast, responsive, and interactive user experience, making the codebase more maintainable and scalable.",
-      "HTML & CSS: HTML provides the structure of the website, while CSS enhances its visual appeal and ensures a seamless user interface.",
+      "HTML & CSS: HTML provides the structure of the website, while CSS enhances its visual appeal.",
       "React State Management: Managing state effectively is crucial for ensuring data consistency and seamless user interactions. By employing React's state management techniques, such as Context API or Redux.",
       "React Hooks: React hooks revolutionized state management and side-effect handling in functional components. Hooks like useState and useEffect enable you to manage component state and perform side effects such as data fetching and subscriptions.",
       "Authentication and Authorization: Implementing authentication and authorization features ensures that only authorized users can access certain parts of the website and perform specific actionsBy integrating authentication mechanisms such as JWT (JSON Web Tokens).",
@@ -406,7 +406,7 @@ export const WorkExperienceData = [
       " Since joining MetricStream, I've resolved over 250 issues and spearheaded the development of 30 new features, all within a span of two years.",
       "One of my key contributions lies in my role as the prime responsible for group by reports and layout preferences in reports, where I've demonstrated my ability to translate complex requirements into elegant frontend solutions.",
       "I've also contributed extensively to our testing infrastructure, adding multiple unit test cases using Jest to validate the reliability and stability of our codebase.",
-      " I closely monitor CI/CD pipelines to ensure smooth integration and deployment processes, utilize GitLab for version control, and leverage Jira for efficient issue tracking and resolution.",
+      "I closely monitor CI/CD pipelines to ensure smooth integration and deployment processes, utilize GitLab for version control, and leverage Jira for efficient issue tracking and resolution.",
       "Active participation in over 50 code reviews has been a cornerstone of my role at MetricStream.  By providing constructive feedback, identifying potential improvements, and sharing best practices, I've helped ensure that every line of code meets our rigorous standards for performance, reliability, and maintainability.",
     ],
     des: `Thrilled to be part of the dynamic team at MetricStream as a Frontend Developer, I'm passionate about crafting exceptional user experiences and pushing the boundaries of industry standards in Governance, Risk, and Compliance (GRC). Leveraging my expertise in Next.js, React.js, Redux state management and React Hook Forms, `,
@@ -440,7 +440,7 @@ export const WorkExperienceData = [
 
 export const AchievementData = [
   {
-    title: "Substantial hike and appraisal ",
+    title: "Substantial Hike and Appraisal",
     subTitle: "MetricStream,Bengaluru",
     result: "Success",
     modalttile: "Driving Client Success at MetricStream",
