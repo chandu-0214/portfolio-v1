@@ -164,7 +164,12 @@ export const MainNavLinks = [
 
 export const Personaldetails = {
   myName: "Chandrashekhar",
-  jobRole: ["Front End Developer.", "Professional Coder.", "UI Designer."],
+  jobRole: [
+    "Front End Developer .",
+    "Professional Coder .",
+    "UI/UX Engineer .",
+    "Web Application Developer .",
+  ],
   description1: `With over `,
   description2: ` years of experience, I've built and improved web apps using frontend technologies.  I'm driven by continuous learning, constantly improving to enhance productivity with a dynamic approach and unwavering dedication, 
   I'm ready to contribute impactful digital experiences and exceptional outcomes to new ventures.`,
@@ -278,30 +283,30 @@ export const projectsData = [
     ],
   },
   {
-    title: "Jobby App",
-    des: "Jobby App is a cutting-edge platform designed to revolutionize the job search experience.",
-    src: JobbyImg,
-    githubLink: "",
-    webLink: "https://nandikijobapp.ccbp.tech/",
-    isComplete: true,
-    modalttile: "Key Features",
-    modalDes: [
-      "Built using React, HTML, CSS, and employing React state management and hooks, it boasts a seamless and intuitive user experience.",
-      "One of the key highlights of Jobby App is its robust authentication and authorization system, ensuring that user data remains secure while providing a personalized experience tailored to individual preferences. ",
-    ],
-  },
-  {
     title: "Youtube Clone",
     des: "Youtube Clone is a dynamic web application that brings the beloved features of YouTube into a whimsical and entertaining platform. ",
     src: Nextwatch,
     githubLink: "",
-    webLink: "https://nandikiytclone.ccbp.tech/",
+    webLink: "https://nandikiutubeapp.ccbp.tech/",
     isComplete: true,
     modalttile: "Key Features",
     modalDes: [
       "With Youtube Clone,users can dive into a world of endless entertainment, watching videos, trailers, and more with just a few clicks. The intuitive interface and smooth navigation make it easy",
       "One of the standout features of Youtube Clone is its robust authentication and authorization system. By implementing secure login mechanisms.",
       "With its playful design and powerful functionality, Youtube Clone brings the magic of YouTube to life in a whole new way.",
+    ],
+  },
+  {
+    title: "Jobby App",
+    des: "Jobby App is a cutting-edge platform designed to revolutionize the job search experience.",
+    src: JobbyImg,
+    githubLink: "",
+    webLink: "https://nandikijobby.ccbp.tech/",
+    isComplete: true,
+    modalttile: "Key Features",
+    modalDes: [
+      "Built using React, HTML, CSS, and employing React state management and hooks, it boasts a seamless and intuitive user experience.",
+      "One of the key highlights of Jobby App is its robust authentication and authorization system, ensuring that user data remains secure while providing a personalized experience tailored to individual preferences. ",
     ],
   },
   {

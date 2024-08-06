@@ -12,7 +12,7 @@ import { calculateYearsAndMonthsSinceStartJob } from "@/app/utils/workingYearCal
 
 const LeftBanner = () => {
   const [text] = useTypewriter({
-    words: ["Front End Developer.", "Professional Coder.", "UI Designer."],
+    words: Personaldetails?.jobRole,
     loop: true,
     typeSpeed: 30,
     deleteSpeed: 20,
