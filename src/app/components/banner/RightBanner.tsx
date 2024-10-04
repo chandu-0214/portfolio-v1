@@ -9,7 +9,6 @@ const RightBanner = () => {
   return (
     <div className="w-full lgl:w-1/2 xl:w-1/2 flex justify-center items-center relative">
       <Image
-        // className="w-[300px] h-[350px] lgl:w-[500px] lgl:h-[550px] z-10 object-cover"
         src={photoUrl}
         alt="bannerImg"
         width={1000}
