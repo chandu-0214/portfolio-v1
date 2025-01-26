@@ -403,8 +403,16 @@ export const EducationData = [
 
 export const WorkExperienceData = [
   {
+    title: "Associate Consultant(B1)",
+    subTitle: "Capgemini - (Dec 2024 - Present)",
+    result: "Bengaluru",
+    modalttile: "Senior Frontend Developer",
+    modalDes: ["working for Comcast.........."],
+    des: `I recently received an offer letter from Capgemini, and I couldn't be more grateful for the support throughout the entire process. The team was incredibly responsive and always ready to assist with any queries I had. From the initial steps to the final offer, the communication was seamless, and I felt genuinely supported at every stage. Their professionalism and dedication made the experience smooth and reassuring. I highly recommend their services to anyone looking to join a fantastic company like Capgemini!`,
+  },
+  {
     title: "Software Engineer(R&D)",
-    subTitle: "MetricStream - (Sept 2022 - Present)",
+    subTitle: "MetricStream - (Sept 2022 - Oct 2024)",
     result: "Bengaluru",
     modalttile: "Experienced Frontend Developer",
     modalDes: [
@@ -418,7 +426,7 @@ export const WorkExperienceData = [
   },
   {
     title: "Software Developer",
-    subTitle: "AppPerfect Corp - (Mar 2022 - Mar 2022)",
+    subTitle: "AppPerfect Corp - (Mar 2022 - Aug 2022)",
     result: "Udaipur",
     modalttile: "Experienced Frontend Developer",
     links: ["https://www.amplabs.ai/"],
